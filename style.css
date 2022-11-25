@@ -230,12 +230,13 @@ main :hover {
 
 #teams {
     height: 24px;
-    width: calc(24/51 * 63px);
+    width: 28px;
 }
 
 #more {
-    width: 41px;
-    height: 9px;
+    width: 20px;
+    height: 4px;
+    margin: 13px 0px 7px;
 }
 
 .androidBottom {
