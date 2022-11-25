@@ -8,8 +8,17 @@
     <script src="script.js" defer></script>
     <title>BVC Teams</title>
 </head>
-
 <body>
+    <div id="start" onclick="timeout(hideBanner, 200)"><p>Final Presentation - Group 12
+        <br><br>Amanda do N. Andrade
+        <br>Kirtan Patel
+        <br>Willian P. Munhoz
+        <br>Daniel Olugboye
+        <br><br>Instructor: Mr. Graham Mosimann
+        <br>MGMT1103_2 Fall/2022</p>
+
+        <img src="./img/BowLogo.png"></div>
+   
     <!-- The whole point is making a mock-up cellphone
     So all of the content should be inside a cellphone image -->
     <div class="cellphone">
@@ -21,7 +30,7 @@
                     <!-- profile pic round to the left, Active tab name with a small gap after it, 3-straight-bars to the right -->
                     <div class="navbar">
                         <div class="profilePic"><img src="./img/profilePicNoIcon.png" alt="ProfPic"></div>
-                        <div class="activeTab"><h2>Chat</h2></div>
+                        <div class="activeTab"><h2 id="activeTab">Chat</h2></div>
                         <div class="expandingMenu">
                             <span></span>
                             <span></span>
@@ -32,11 +41,16 @@
                         <div class="searchIcon"><img src="./img/search.png"></div>
                         <input class="searchInput" type="text" placeholder="Search"></input>
                     </div>
+                    <div class="chatTop" id="chatTop">
+                        <div><span>CHAT</span></div>
+                        <div><span>FILES</span></div>
+                        <div><span>MORE</span></div>
+                    </div>
                 </navbar>
-                
+               
                 <main>
                     <!-- User's pinned chat. Bigger profile picture with first name(You) underneath it Centered-->
-                    <div class="you">
+                    <div class="you" id="you" onclick="timeout(goToYourProfile, 200)">
                         <figure><img src="./img/profilePic.png" alt="profilePic">
                             <figcaption>Student (You)</figcaption>
                         </figure>
@@ -74,6 +88,7 @@
                             <p>You: Anybody there? Hello...?</p> </div>
                         <div class="timestamp">212 B.C.</div>
                     </div>
+                    <div class="yourChat">This is a chat message you sent. Hello!</div>
 
 
                 </main>
@@ -87,10 +102,13 @@
                         <div class="footerButton"><img src="./img/Schedule.png" id="schedule">Schedule</div>
                         <div class="footerButton"><img src="./img/More.png" id="more">More</div>
                     </div>
+                    <div class="chatBottom">
+                        <div id="plusButton">+</div>
+                        <div><input id="chatInput" placeholder="Type a message here"/></div>
+                        <div id="cameraAndMic"></div>
+                    </div>
                     <div  class="androidBottom">
-                        <div id="apps">
-                            <span></span><span></span><span></span>
-                        </div>
+                        <div id="apps"><span></span><span></span><span></span></div>
                         <div id="home"></div>
                         <div id="back"><span></span><span></span></div>
                     </div>

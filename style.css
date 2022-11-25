@@ -2,6 +2,7 @@
     --color1: #303030;
     --color2: rgb(20,20,20);
     --color3: #141414;
+    --color4: rgb(107, 50, 181);
 }
 
 *{
@@ -10,9 +11,39 @@
     font-family: sans-serif;
     font-size: 12px;
 }
+#start {
+    border: 5px solid black;
+    box-shadow: 5px 5px 5px var(--color4);
+    display: flex;
+    position: fixed;
+    top: 30%;
+    justify-content: center;
+    width: 100%;
+    background-image: linear-gradient(90deg, gray, white, white, white,white,white, gray);
+    z-index: 99;
+}
+
+
+#start p {
+    color: black;
+    font-size: large;
+    line-height: 1.5em;
+}
+
+#start s {
+    color: gray;
+    font-size: medium;
+}
+
+#start>img {
+    display: block;
+    align-self: center;
+    height: 200px;
+    z-index: 100;
+    top: 0;
+}
 
 html {
-
     background-image: linear-gradient(rgb(20,20,20), rgb(70,70,70));
 }
 
@@ -47,13 +78,13 @@ body {
 .androidTop {
     display: flex;
     object-fit: fill;
-    width: 333px;
+    width: 332px;
     min-height: 15px;
     background-color: var(--color3);
 }
 .androidTop img {
     object-fit: fill;
-    width: 333px;
+    width: 332px;
 }
 
 navbar {
@@ -67,8 +98,12 @@ navbar {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 323px;
+    width: 322px;
     height: 40px;
+}
+
+.top {
+    width: 332px;
 }
 
 .navbar img {
@@ -117,6 +152,38 @@ width: 5px;
     align-self: center;
 }
 
+#chatTop {
+    display: none;
+    justify-content: space-around;
+    flex: 1;
+    height: 30px;
+    align-items: center;
+}
+
+#chatTop>div {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    border-bottom: 4px solid var(--color2);
+}
+
+#chatTop :hover{
+    color: var(--color4);
+    border-bottom: 5px solid var(--color4);
+}
+
+#chatTop :hover span {
+    color: var(--color4);
+    border: none;
+}
+
+#chatTop span {
+    font-size: 1em;
+    color: gray;
+    font-weight: 700;
+}
+
 .search input {
     background-color: var(--color1);
     border: none;
@@ -135,16 +202,17 @@ main {
     background-color: var(--color1);
     display: flex;
     flex-direction: column;
-    max-height: 586px;
-    width: 333px;
+    width: 332px;
+    min-height: 416px;
+    max-height: 416px;
     gap: 1px;
-}
+    }
 
 .you {
     background-color: black;
     display: flex;
     height: 80px;
-    width: 333px;
+    width: 332px;
     justify-content: center;
 }
 
@@ -201,21 +269,39 @@ main :hover {
     justify-self: flex-end;
 }
 
+.yourChat {
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 90px;
+    flex-wrap: wrap;
+    max-width: 250px;
+    border-radius: 10px;
+    color: white;
+    line-height: 2em;
+    font-size: 1.2em;
+    background-color: var(--color4);
+    padding: 3px 3px 2px 5px;
+}
+
 #footer {
+    padding-top: 4px ;
+    margin-bottom: 4px;
     background-color: var(--color3);
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    height: 40px;
-    bottom: 96px;
+    height: 36px;
+    bottom: 92px;
     align-self: center;
     align-items: center;
-    width: 333px;
+    width: 332px;
 }
 
-.footer>div :hover {
-    background-color: rgb(84, 68, 206);
+#footer :hover {
+    background-color: var(--color4);
 }
+
 
 .footerButton {
     display: flex;
@@ -242,12 +328,49 @@ main :hover {
 
 .androidBottom {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color: black;
-    width: 333px;
+    width: 332px;
     height: 30px;
     bottom: 66px;
+}
+
+.chatBottom {
+    display: none;
+    padding-top: 4px ;
+    margin-bottom: 4px;
+    background-color: black;
+    justify-content: flex-start;
+    gap: 5px;
+    flex-direction: row;
+    height: 36px;
+    bottom: 97px;
+    align-self: center;
+    align-items: center;
+    width: 332px;
+}
+
+#plusButton {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 22px;
+    width: 22px;
+    font-size: 20px;
+    border-radius: 11px;
+    background-color: var(--color4);
+}
+
+.chatBottom input {
+    background-color: var(--color1);
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    width: 250px;
+    padding-left: 5px;
 }
 
 #apps {
