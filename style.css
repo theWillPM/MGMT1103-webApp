@@ -30,6 +30,7 @@ body {
     position: relative;
     width: 365px;
     background-image: url("./img/phone.png");
+    background-repeat: no-repeat;
 }
 
 .screen {
@@ -199,11 +200,10 @@ main :hover {
     justify-self: flex-end;
 }
 
-.footer {
+#footer {
     background-color: var(--color3);
     display: flex;
     justify-content: space-evenly;
-    position: fixed;
     flex-direction: row;
     height: 40px;
     bottom: 96px;
@@ -212,7 +212,7 @@ main :hover {
     width: 333px;
 }
 
-.footer>div :hover {
+#footer>div :hover {
     background-color: rgb(84, 68, 206);
 }
 
@@ -243,7 +243,6 @@ main :hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    position: fixed;
     background-color: black;
     width: 333px;
     height: 30px;
