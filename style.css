@@ -29,6 +29,7 @@ body {
     display: flex;
     position: relative;
     width: 365px;
+    min-height: 759px;
     background-image: url("./img/phone.png");
     background-repeat: no-repeat;
 }
