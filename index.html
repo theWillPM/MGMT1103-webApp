@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>BVC Teams</title>
+</head>
+
+<body>
+    <!-- The whole point is making a mock-up cellphone
+    So all of the content should be inside a cellphone image -->
+    <div class="cellphone">
+        <div class="screen">
+            <div class="androidTop">
+                <img src="./img/androidTop.png">
+            </div>
+                <navbar class="top">
+                    <!-- profile pic round to the left, Active tab name with a small gap after it, 3-straight-bars to the right -->
+                    <div class="navbar">
+                        <div class="profilePic"><img src="./img/profilePic.png" alt="ProfPic"></div>
+                        <div class="activeTab"><h2>Chat</h2></div>
+                        <div class="expandingMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <div class="searchIcon"><img src="./img/search.png"></div>
+                        <input class="searchInput" type="text" placeholder="Search"></input>
+                    </div>
+                </navbar>
+                
+                <main>
+                    <!-- User's pinned chat. Bigger profile picture with first name(You) underneath it Centered-->
+                    <div class="you">
+                        <figure><img src="./img/profilePic.png" alt="profilePic">
+                            <figcaption>Student (You)</figcaption>
+                        </figure>
+                        <!-- Small icon over the bottom right of the picture -->
+                        <div class="statusIcon"></div>
+                    </div>
+                    <div class="chatLine">
+                        <div class="profilePic"><img src="./img/wade.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>Wade Wilson</p><p>Have you seen my new hands?</p> </div>
+                        <div class="timestamp">17:29</div>
+                    </div>
+                    <div class="chatLine">
+                        <div class="profilePic"><img src="./img/StudentB_pic.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>Student BB</p><p>Two B or not two B?</p> </div>
+                        <div class="timestamp">Yesterday</div>
+                    </div>
+                    <div class="chatLine">
+                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>Student C</p><p>Who are you again?</p> </div>
+                        <div class="timestamp">Yesterday</div>
+                    </div>
+                    <div class="chatLine">
+                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>Instructor Mr. Awesome</p><p>All right! You get an A+</p> </div>
+                        <div class="timestamp">Sunday</div>
+                    </div>
+                    <div class="chatLine">
+                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>Student D</p><p>Hello</p> </div>
+                        <div class="timestamp">XIX Century</div>
+                    </div>
+                    <div class="chatLine">
+                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>[MGMT1103_2]G#12_Assignment1</p>
+                            <p>You: Anybody there? Hello...?</p> </div>
+                        <div class="timestamp">212 B.C.</div>
+                    </div>
+
+
+                </main>
+                <footer class="footer">
+                    <!-- Absolute position footer -->
+                    <div class="footer">
+                        <div class="footerButton"><img src="./img/Activity.png" id="activity">Activitiy</div>
+                        <div class="footerButton"><img src="./img/Chat_Active.png" id="chat">Chat</div>
+                        <div class="footerButton"><img src="./img/TeamsLogo.png" id="teams">Teams</div>
+                        <div class="footerButton"><img src="./img/AssignmentsLogo.png" id="assignments">Assignments</div>
+                        <div class="footerButton"><img src="./img/ScheduleLogo.png" id="schedule">Schedule</div>
+                        <div class="footerButton"><img src="./img/MoreLogo.png" id="more">More</div>
+                    </div>
+                    <div  class="androidBottom">
+                        <div id="apps">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div id="home"></div>
+                        <div id="back"><span></span><span></span></div>
+                    </div>
+                </footer>
+            
+        </div>
+    </div>
+</body>
+</html>

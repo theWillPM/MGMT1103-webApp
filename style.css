@@ -1,0 +1,279 @@
+:root {
+    --color1: #303030;
+    --color2: rgb(20,20,20);
+    --color3: #141414;
+}
+
+*{
+    cursor: pointer;
+    color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+html {
+
+    background-image: linear-gradient(rgb(20,20,20), rgb(70,70,70));
+}
+
+body {
+    cursor: default;
+    display: flex;
+    margin: 0px;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.cellphone {
+    display: flex;
+    position: relative;
+    width: 365px;
+    background-image: url("./img/phone.png");
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 84px;
+    left: 16px;
+    width: 333px;
+    height: 586px;
+}
+
+.androidTop {
+    display: flex;
+    object-fit: fill;
+    width: 333px;
+    min-height: 15px;
+    background-color: var(--color3);
+}
+.androidTop img {
+    object-fit: fill;
+    width: 333px;
+}
+
+navbar {
+    background-color: var(--color3);
+    padding-bottom: 4px;
+}
+.navbar {
+    padding: 2px 5px;
+    background-color: var(--color3);
+    flex: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 323px;
+    height: 40px;
+}
+
+.navbar img {
+    height: 30px;
+}
+
+.navbar h2 {
+    font-size: 1.5em;
+}
+
+.expandingMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    align-self: right;
+    height: 40px;
+    width: 40px;
+}
+
+.expandingMenu span {
+    background-color: white;
+    margin-bottom: 4px;
+    width: 16px;
+    height: 1px;
+    display: block;
+}
+.expandingMenu>:nth-child(2) {
+width: 10px;
+}
+.expandingMenu>:nth-child(3) {
+width: 5px;
+}
+
+.search {
+    padding-left: 8px;
+    display: flex;
+    background-color: var(--color1);
+    height: 30px;   
+    margin-left: 8px;
+    align-items: center;
+    border-radius: 7px;
+    width: 310px;
+    align-self: center;
+}
+
+.search input {
+    background-color: var(--color1);
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    width: 290px;
+    padding: 0;
+}
+
+.searchIcon {
+    display: flex;
+    height: 25px;
+}
+
+main {
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    max-height: 586px;
+    width: 333px;
+    gap: 1px;
+}
+
+.you {
+    background-color: black;
+    display: flex;
+    height: 80px;
+    width: 333px;
+    justify-content: center;
+}
+
+.you figure {
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.you img {
+    height: 55px;
+}
+
+.you figcaption {
+    display: flex;
+}
+
+main :hover {
+    background-color: var(--color1);
+}
+.chatLine {
+    background-color: black;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.chatLine img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.nameAndLastMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.chatLine p {
+    margin: 0;
+    line-height: 1.5em;
+}
+
+.timestamp {
+    color: gray;
+    position: absolute;
+    right: 10px;
+    justify-self: flex-end;
+}
+
+.footer {
+    background-color: var(--color3);
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    flex-direction: row;
+    height: 40px;
+    bottom: 96px;
+    align-self: center;
+    align-items: center;
+    width: 333px;
+}
+
+.footerButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footerButton img {
+    display: flex;
+    height: 25px;
+}
+
+#teams {
+    height: 24px;
+    width: calc(24/51 * 63px);
+}
+
+.androidBottom {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    width: 333px;
+    height: 30px;
+    bottom: 66px;
+}
+
+#apps {
+    margin-left: 10px;
+}
+
+.androidBottom span {
+    display: inline-block;
+    margin-right: 4px;
+    width: 2px;
+    height: 15px;
+    background-color: rgb(185, 185, 185);
+}
+
+#home {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 6px;
+}
+
+#back {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-right: 10px;
+}
+#back span{
+    width: 13px;
+    height: 1px;
+    background-color: white;
+}
+
+#back :first-child {
+    transform: rotate(-45deg) translate(2px, 0);
+}
+#back :nth-child(2) {
+    transform: rotate(45deg) translate(1px, -1px);
+
+}
