@@ -212,11 +212,16 @@ main :hover {
     width: 333px;
 }
 
+.footer>div :hover {
+    background-color: rgb(84, 68, 206);
+}
+
 .footerButton {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 42px;
 }
 .footerButton img {
     display: flex;
@@ -226,6 +231,11 @@ main :hover {
 #teams {
     height: 24px;
     width: calc(24/51 * 63px);
+}
+
+#more {
+    width: 41px;
+    height: 9px;
 }
 
 .androidBottom {
