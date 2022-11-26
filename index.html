@@ -26,7 +26,7 @@
             <div class="androidTop">
                 <img src="./img/androidTop.png">
             </div>
-                <navbar class="top">
+                <navbar class="top" id="navbar">
                     <!-- profile pic round to the left, Active tab name with a small gap after it, 3-straight-bars to the right -->
                     <div class="navbar">
                         <div class="profilePic"><img src="./img/profilePicNoIcon.png" alt="ProfPic"></div>
@@ -49,8 +49,10 @@
                 </navbar>
                
                 <main>
+                    <div id="homeScreen"><img src="./img/homeScreen.png"></div>
+                    <div id="homeButtons"><div id="teamsIcon" onclick="goToChat()"></div><div id="bvcTeams"></div></div>
                     <!-- User's pinned chat. Bigger profile picture with first name(You) underneath it Centered-->
-                    <div class="you" id="you" onclick="timeout(goToYourProfile, 200)">
+                    <div class="you" id="you" onclick="timeout(goToYourChat, 200)">
                         <figure><img src="./img/profilePic.png" alt="profilePic">
                             <figcaption>Student (You)</figcaption>
                         </figure>
@@ -88,6 +90,7 @@
                             <p>You: Anybody there? Hello...?</p> </div>
                         <div class="timestamp">212 B.C.</div>
                     </div>
+                    <p class="timeSent">Yesterday 10:05</p>
                     <div class="yourChat">This is a chat message you sent. Hello!</div>
 
 
@@ -105,12 +108,12 @@
                     <div class="chatBottom">
                         <div id="plusButton">+</div>
                         <div><input id="chatInput" placeholder="Type a message here"/></div>
-                        <div id="cameraAndMic"></div>
+                        <div id="cameraAndMic"><img src="./img/camera.png"><img src="./img/microphone.png"></div>
                     </div>
                     <div  class="androidBottom">
-                        <div id="apps"><span></span><span></span><span></span></div>
-                        <div id="home"></div>
-                        <div id="back"><span></span><span></span></div>
+                        <div class="bottomScreen"><div id="apps"><span></span><span></span><span></span></div></div>
+                        <div class="bottomScreen"><div id="home"></div></div>
+                        <div class="bottomScreen" onclick="timeout(backClick, 200)"><div id="back"><span></span><span></span></div></div>
                     </div>
                 </footer>
             

@@ -91,6 +91,11 @@ navbar {
     background-color: var(--color3);
     padding-bottom: 4px;
 }
+
+#navbar {
+    flex-direction: column;
+    height: 77px;
+}
 .navbar {
     padding: 2px 5px;
     background-color: var(--color3);
@@ -152,6 +157,16 @@ width: 5px;
     align-self: center;
 }
 
+#homeScreen img {
+    width: 332px;
+    height: 540px;
+}
+#homeScreen {
+    display: none;
+    width: 333px;
+    height: 540px;
+}
+
 #chatTop {
     display: none;
     justify-content: space-around;
@@ -198,6 +213,35 @@ width: 5px;
     height: 25px;
 }
 
+#homeButtons {
+    display: flex;
+    background-color: none;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    top: 195px;
+    height: 55px;
+    width: 125px;
+}
+
+
+
+#teamsIcon {
+    display: flex;
+    background-color: none;
+    height: 55px;
+    width: 50px;
+    z-index: 5;
+}
+#bvcTeams {
+    height: 55px;
+    width: 50px;
+    display: flex;
+    background-color: none;
+    z-index: 5;
+}
+
 main {
     background-color: var(--color1);
     display: flex;
@@ -233,9 +277,10 @@ main {
     display: flex;
 }
 
-main :hover {
+main:hover:not(#homeButtons) {
     background-color: var(--color1);
 }
+
 .chatLine {
     background-color: black;
     height: 55px;
@@ -283,6 +328,15 @@ main :hover {
     background-color: var(--color4);
     padding: 3px 3px 2px 5px;
 }
+
+.timeSent {
+    display: none;
+    position: absolute;
+    right: 120px;
+    bottom: 150px;
+    color: gray;
+}
+
 
 #footer {
     padding-top: 4px ;
@@ -341,7 +395,7 @@ main :hover {
     padding-top: 4px ;
     margin-bottom: 4px;
     background-color: black;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     gap: 5px;
     flex-direction: row;
     height: 36px;
@@ -369,12 +423,28 @@ main :hover {
     border: none;
     border-radius: 8px;
     height: 30px;
-    width: 250px;
+    width: 220px;
     padding-left: 5px;
 }
+#cameraAndMic {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+}
+#cameraAndMic img {
+    height: 24px;
+}
 
-#apps {
-    margin-left: 10px;
+.bottomScreen {
+    display: flex;
+    width: 33.3%;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+}
+
+.androidBottom :hover {
+    background-color: var(--color1);
 }
 
 .androidBottom span {
@@ -395,8 +465,10 @@ main :hover {
 #back {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 7px;
     margin-right: 10px;
+    width: 100%;
 }
 #back span{
     width: 13px;
