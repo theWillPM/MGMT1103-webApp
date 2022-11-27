@@ -29,8 +29,8 @@
                 <navbar class="top" id="navbar">
                     <!-- profile pic round to the left, Active tab name with a small gap after it, 3-straight-bars to the right -->
                     <div class="navbar">
-                        <div class="profilePic"><img src="./img/profilePicNoIcon.png" alt="ProfPic"></div>
-                        <div class="activeTab"><h2 id="activeTab">Chat</h2></div>
+                        <div class="profilePicContainer" style="width: 30px; margin-bottom: 20px"><img id="currentProfPic" src="./img/profilePicNoIcon.png" alt="ProfPic"></div>
+                        <div class="activeTab" onclick="timeout(openProfile, 200)"><h2 id="activeTab">Chat</h2></div>
                         <div class="expandingMenu">
                             <span></span>
                             <span></span>
@@ -53,48 +53,72 @@
                     <div id="homeButtons"><div id="teamsIcon" onclick="goToChat()"></div><div id="bvcTeams"></div></div>
                     <!-- User's pinned chat. Bigger profile picture with first name(You) underneath it Centered-->
                     <div class="you" id="you" onclick="timeout(goToYourChat, 200)">
-                        <figure><img src="./img/profilePic.png" alt="profilePic">
+                        <figure><img src="./img/profilePic2.png" alt="profilePic" id="yourChatPic">
                             <figcaption>Student (You)</figcaption>
                         </figure>
+                        <div class="badges">
+                            <div id="goldStar"><img src="./img/goldStar.png" alt="star"><span class="tooltip">This badge shows this student had a 4.0 GPA! Well done!</span></div>
+                            <div id="inclusive"><img src="./img/Badge_Inclusive.png" alt="inclusive"><span class="tooltip">This badge shows this student has been voted to be inclusive by their peers.</span></div>
+                            <div id="leader"><img src="./img/Badge_Leader.png" alt="leader"><span class="tooltip">This badge indicates this student has proven to be a great leader!</span></div>
+                        </div>
+                        
                         <!-- Small icon over the bottom right of the picture -->
-                        <div class="statusIcon"></div>
+                        <div class="statusIcon"><img src="./img/available.png"></div>
                     </div>
-                    <div class="chatLine">
-                        <div class="profilePic"><img src="./img/wade.png" alt="profilePic"></div>
+                    <div class="chatLine" id="wadeChat" onclick="timeout(goToWadeChat, 200)">
+                        <div class="profilePicContainer"><img class="profilePic" src="./img/wade.png" alt="profilePic"><img class="chatStatusIcon" src="./img/available.png"></div>
                         <div class="nameAndLastMessage"><p>Wade Wilson</p><p>Have you seen my new hands?</p> </div>
                         <div class="timestamp">17:29</div>
                     </div>
+                    <div class="chatLine" id="mettingChat">
+                        <div class="profilePicContainer"><img class="profilePic"  src="./img/meetingIcon.png" alt="profilePic"></div>
+                        <div class="nameAndLastMessage"><p>[MGMT1103_2]G#12_Assignment1</p>
+                            <p>Bot: Welcome to your new group.</p> </div>
+                        <div class="timestamp">212 B.C.</div>
+                    </div>
                     <div class="chatLine">
-                        <div class="profilePic"><img src="./img/StudentB_pic.png" alt="profilePic"></div>
+                        <div class="profilePicContainer"><img class="profilePic"  src="./img/profilePic2.png" alt="profilePic"><img class="chatStatusIcon" src="./img/absent.png"></div>
                         <div class="nameAndLastMessage"><p>Student BB</p><p>Two B or not two B?</p> </div>
                         <div class="timestamp">Yesterday</div>
                     </div>
                     <div class="chatLine">
-                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="profilePicContainer"><img class="profilePic"  src="./img/profilePic2.png" alt="profilePic"><img class="chatStatusIcon" src="./img/available.png"></div>
                         <div class="nameAndLastMessage"><p>Student C</p><p>Who are you again?</p> </div>
                         <div class="timestamp">Yesterday</div>
                     </div>
                     <div class="chatLine">
-                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="profilePicContainer"><img class="profilePic"  src="./img/profilePic2.png" alt="profilePic"><img class="chatStatusIcon" src="./img/absent.png"></div>
                         <div class="nameAndLastMessage"><p>Instructor Mr. Awesome</p><p>All right! You get an A+</p> </div>
                         <div class="timestamp">Sunday</div>
                     </div>
                     <div class="chatLine">
-                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
+                        <div class="profilePicContainer"><img class="profilePic"  src="./img/profilePic2.png" alt="profilePic"><img class="chatStatusIcon" id="offline" src="./img/offline.png"></div>
                         <div class="nameAndLastMessage"><p>Student D</p><p>Hello</p> </div>
                         <div class="timestamp">XIX Century</div>
                     </div>
-                    <div class="chatLine">
-                        <div class="profilePic"><img src="./img/profilePic.png" alt="profilePic"></div>
-                        <div class="nameAndLastMessage"><p>[MGMT1103_2]G#12_Assignment1</p>
-                            <p>You: Anybody there? Hello...?</p> </div>
-                        <div class="timestamp">212 B.C.</div>
-                    </div>
-                    <p class="timeSent">Yesterday 10:05</p>
-                    <div class="yourChat">This is a chat message you sent. Hello!</div>
 
+                    <!-- This div holds all chat screens -->
+                    <div id="chatScreen">
+                        <!-- you chat -->
+                        <div class="yourChatContainer your">
+                            <p class="timeSent your">Yesterday 10:05</p>
+                            <div class="yourChat your">This is a chat message you sent. Hello!</div>
+                        </div>
+
+                        <!-- wade chat -->
+                        <div class ="theirChatContainer wade">
+                            <p class="timeSent wade">Wednesday 11:59 PM</p>
+                            <div class="theirChat wade">Have you seen my new hands? They look awesome!</div>
+                        </div>
+                        <div class="yourChatContainer wade">
+                            <div class="yourChat wade">Are those...baby hands?</div>
+                        </div>
+                        <div id="profileIconBarContainer">BVC POINTS: 42<img id="profileIconBar" src="./img/profileIcons.png"></div>
+                        <div id="emailContainer">Email<p id="email">s.tudent123@mybvc.ca</p></div>
+                    </div>
 
                 </main>
+
                 <footer class="footer">
                     <!-- Absolute position footer -->
                     <div id="footer">
@@ -112,7 +136,7 @@
                     </div>
                     <div  class="androidBottom">
                         <div class="bottomScreen"><div id="apps"><span></span><span></span><span></span></div></div>
-                        <div class="bottomScreen"><div id="home"></div></div>
+                        <div class="bottomScreen" onclick="timeout(goHome, 200)"><div id="home"></div></div>
                         <div class="bottomScreen" onclick="timeout(backClick, 200)"><div id="back"><span></span><span></span></div></div>
                     </div>
                 </footer>
