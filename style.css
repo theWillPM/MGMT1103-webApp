@@ -8,6 +8,7 @@
     --color7: #FFFFFF;
 }
 
+
 *{
     cursor: pointer;
     color: var(--color7);
@@ -26,6 +27,24 @@
     z-index: 99;
 }
 
+.checkbox {
+    accent-color: #00f756;
+    border-radius: 50%;
+    margin: 0;
+    height: 20px;
+    width: 20px;
+
+    
+}
+
+/* Thank you Anish Raj Pandey for this code snippet for the round checkboxes:
+https://stackoverflow.com/a/70997842
+ */
+input[type="checkbox"] {
+    width: 20px;                         /* Set width */
+    height: 20px;                        /* Set height */
+    clip-path: circle(46% at 50% 50%);   /* Set the clip path of circle*/
+  }
 
 #start p {
     color: var(--color5);
