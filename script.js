@@ -24,10 +24,15 @@ let yourProfPic = document.getElementById("yourChatPic");
 let chatScreen = document.getElementById("chatScreen");
 let theirChatWade = document.querySelectorAll('.theirChatContainer.wade, .theirChat.wade');
 let profileIconBarContainer = document.getElementById("profileIconBarContainer");
-let profileContent = document.querySelectorAll('#email, #emailContainer, #profileIconBarContainer, #profileIconBar, .badges');
+let profileContent = document.querySelectorAll('#email, .emailContainer, #profileIconBarContainer, #profileIconBar, .badges');
+let badges = document.getElementById('badges');
+let reviews = document.querySelectorAll('#review1, #review2, #peer');
 let profName = document.querySelector('figcaption');
 let currentEmail = document.getElementById('email');
 let rootElement = document.querySelector(':root');
+let current = "dark";
+let chatTopSpan = document.querySelectorAll('chatTop,span');
+let toolTips = document.querySelectorAll('.tooltip');
 // console.log(yourChatYou);
 
 goHome();
@@ -44,6 +49,15 @@ function setLightMode() {
     rootElement.style.setProperty('--color5', 'white');
     rootElement.style.setProperty('--color6', '#888888');
     rootElement.style.setProperty('--color7', 'black');
+    badges.style.backgroundColor = "var(--color5)";
+    chatTopSpan.forEach(element => {
+        element.style.color="var(--color7)";
+   });
+   toolTips.forEach(element => {
+    element.style.color = "var(--color5)";
+    element.style.backgroundColor = "var(--color7)";
+});
+profileIconBarContainer.style.backgroundColor="var(--color4)"
 }
 function setDarkMode() {
     rootElement.style.setProperty('--color1', '#303030');
@@ -53,6 +67,15 @@ function setDarkMode() {
     rootElement.style.setProperty('--color5', 'black');
     rootElement.style.setProperty('--color6', '#888888');
     rootElement.style.setProperty('--color7', 'white');
+    badges.style.backgroundColor = "var(--color7)";
+    chatTopSpan.forEach(element => {
+        element.style.color="var(--color6)";
+   }); 
+   toolTips.forEach(element => {
+    element.style.color = "var(--color5)";
+    element.style.backgroundColor = "var(--color7)";
+});
+profileIconBarContainer.style.backgroundColor="var(--color5)"
 }
 
 
@@ -115,12 +138,15 @@ function goToChat() {
     currentProfPic.src="./img/profilePic2.png";
     chatScreen.style.display="none";   
     profileIconBarContainer.style.display="none";
+    yourProfile.onclick = function() {timeout(goToYourChat, 200)};
     resetUser();
 }
 
 function openYourProfile() {
+    yourProfile.onclick="timeout(openYourProfile(), 200)";
     chatTop.style.display = "none";
     yourProfile.style.display = "flex";
+    yourProfile.onclick = function() {timeout(switchProfile, 200)};
     navbar.style.display = "block";
     navbar.style.height = "50px";
     chatScreen.style.justifyContent = "flex-start";
@@ -131,8 +157,14 @@ function openYourProfile() {
     profileContent.forEach(element => {
         element.style.display = "flex";
     });
+    badges.style.display="none";
+    profileIconBarContainer.innerHTML='<img id="profileIconBar" src="./img/profileIcons.png">';
     chatBottom.removeAttribute('style');
     activeTab = "yourProfile";
+    reviews.forEach(element => {
+        element.style.display="none";
+    });
+    
 }
 
 function goHome() {
@@ -164,8 +196,8 @@ function goHome() {
 }
 
 function goToWadeChat() {
-    
     goToYourChat();
+    
     currentTab.innerText = "Wade Wilson";
     yourChatYou.forEach(element => {
         element.style.display = "none";
@@ -183,7 +215,7 @@ function goToWadeChat() {
 
 function goToMeetingChat() {
     goToWadeChat();
-
+    
     currentTab.innerText = "[MGMT1103_2]G#12_Assignment1";
     yourChatYou.forEach(element => {
         element.style.display = "none";
@@ -201,16 +233,45 @@ function goToMeetingChat() {
     });
     currentTab.style.fontSize="1em";
     activeTab = "meeting";
-
+    
 }
 
 function openWadeProfile() {
     openYourProfile();
     yourProfPic.src="./img/wade.png";
     profName.textContent="Wade Wilson";
+    yourProfile.removeAttribute('onclick');
+    yourProfile.onclick = function() {timeout(switchProfile, 200)};
     currentEmail.textContent="w.wilson999@mybvc.ca";
+    badges.style.display="none";
+
+
+    profileIconBarContainer.innerHTML='<img id="profileIconBar" src="./img/profileIcons.png">';
 
     activeTab = "wadeProfile";
+}
+
+function switchProfile() {
+    if (current == "dark") {
+    setLightMode();
+    profileIconBarContainer.innerHTML='<strong>BVC Points: 42</strong><img id="profileIconBar" src="./img/profileIcons.png">';
+    badges.style.display="flex";
+    reviews.forEach(element => {
+        element.style.display="flex";
+    });
+    
+    current = "light";
+
+
+    } else if (current == "light") {
+    setDarkMode();
+    reviews.forEach(element => {
+        element.style.display="none";
+    });
+    profileIconBarContainer.innerHTML='<img id="profileIconBar" src="./img/profileIcons.png">';
+    badges.style.display="none";
+    current = "dark";
+    }
 }
 
 function backClick() {
@@ -224,7 +285,7 @@ function backClick() {
         goToChat();
         goToYourChat();
     }
-    if (activeTab == "wadeProfile") {
+    else if (activeTab == "wadeProfile") {
         goToChat();
         goToWadeChat();
     }

@@ -14,6 +14,7 @@
     color: var(--color7);
     font-family: sans-serif;
     font-size: 12px;
+    transition: 1s;
 }
 #start {
     border: 5px solid var(--color5);
@@ -331,6 +332,7 @@ main {
     border-radius: 5px;
     border: 1px solid var(--color5);
     z-index: 6;
+    transition: none;
 }
 
 #goldStar:hover .tooltip {
@@ -350,7 +352,7 @@ main {
     left: 140px;
 }
 .theirChat.wade img {
-    height: 25px;
+    height: 20px;
 }
 .theirChat.wade {
     position: relative;
@@ -359,7 +361,7 @@ main {
 #yourChatPic {
     height: 55px;
     border-radius: 50%;
-    border: 1px solid var(--color5);
+    border: 1px solid black;
 }
 
 .you .statusIcon {
@@ -507,7 +509,7 @@ main:hover:not(#homeButtons) {
 }
 
 .theirChatContainer.meeting {
-    gap: 20px;
+    gap: 10px;
     align-items: flex-end;
 }
 
@@ -534,7 +536,7 @@ main:hover:not(#homeButtons) {
 #profileIconBarContainer {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 40px;
     gap: 10px;
@@ -548,7 +550,7 @@ main:hover:not(#homeButtons) {
     height: 25px;
 }
 
-#emailContainer {
+.emailContainer {
     margin-left: 10px;
     display: "none";
     flex-direction: column;
@@ -561,6 +563,33 @@ main:hover:not(#homeButtons) {
     color: var(--color4);
     font-size: 1.2em;
     font-weight: 700;
+}
+
+.emailContainer#peer {
+    display: none;
+    font-weight: 700;
+    font-size: 2em;
+    width: 290px;
+    text-align: center;
+}
+
+.emailContainer#review1 {
+    display: none;
+    border-radius: 4px;
+    gap: 4px;
+    padding: 2px;
+   border: 1px solid var(--color6);
+   width: 290px;
+   background-color: var(--color1);
+}
+.emailContainer#review2 {
+    display: none;
+    border-radius: 4px;
+    gap: 4px;
+    padding: 2px;
+    border: 1px solid var(--color6);
+    width: 290px;
+    background-color: var(--color1);
 }
 
 #footer {

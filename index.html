@@ -56,10 +56,10 @@
                         <figure><img src="./img/profilePic2.png" alt="profilePic" id="yourChatPic">
                             <figcaption>Student (You)</figcaption>
                         </figure>
-                        <div class="badges">
+                        <div class="badges" id="badges">
                             <div id="goldStar"><img src="./img/goldStar.png" alt="star"><span class="tooltip">This badge shows this student had a 4.0 GPA! Well done!</span></div>
                             <div id="inclusive"><img src="./img/Badge_Inclusive.png" alt="inclusive"><span class="tooltip">This badge shows this student has been voted to be inclusive by their peers.</span></div>
-                            <div id="leader"><img src="./img/Badge_Leader.png" alt="leader"><span class="tooltip">This badge indicates this student has proven to be a great leader!</span></div>
+                            <div id="leader"><img src="./img/Badge_LeaderGIF.gif" alt="leader"><span class="tooltip">This badge indicates this student has proven to be a great leader!</span></div>
                         </div>
                         
                         <!-- Small icon over the bottom right of the picture -->
@@ -118,12 +118,17 @@
 
                         <div class="theirChat wade">Chimichanga!<img src="./img/report.png" class="report"><span class="tooltip">This icon shows the user sent this message with an urgency status. This icon may also be clicked to report this message.</span></div>
                         <div id="profileIconBarContainer">BVC POINTS: 42<img id="profileIconBar" src="./img/profileIcons.png"></div>
-                        <div id="emailContainer">Email<p id="email">s.tudent123@mybvc.ca</p></div>
+                        <div class="emailContainer">Email<p id="email">s.tudent123@mybvc.ca</p></div>
+                        <div class="emailContainer" id="peer">PEER REVIEWS:</div>
+                        <div class="emailContainer"id="review1"><div>MGMT1103_2_Assignment1</div><div><input type="radio" name="grade1">1<input type="radio" name="grade1">2<input type="radio" name="grade1">3<input type="radio" name="grade1">4<input type="radio" name="grade1" checked>5</div></div>
+
+                        <div class="emailContainer" id="review2"><div>MGMT1103_2_Assignment2</div><div>BVC Points:<input type="radio" name="grade3">1<input type="radio" name="grade3">2<input type="radio" name="grade3">3<input type="radio" name="grade3">4<input type="radio" name="grade3" checked>5</div><div>How good of a leader was this person?</div><div><input type="radio" name="grade2">1<input type="radio" name="grade2">2<input type="radio" name="grade2">3<input type="radio" name="grade2">4<input type="radio" name="grade2" checked>5</div></div>
 
                         <!-- Meeting Bot Chat -->
                         <div class ="theirChatContainer meeting">
-                            <p class="timeSent meeting" style="transform: translateY(20px); margin-right: 130px;">Today 08:15 AM</p>
+                            <p class="timeSent meeting" style="transform: translateY(10px); margin-right: 130px;">Today 08:15 AM</p>
                             <div class="theirChat meeting">Bot: Welcome to your new group. This is an automated message. This chat was automatically created with your group members and is under your instructor's supervision. <br>The auto-scheduler has identified these 3 time slots would work great for your next team meeting. Please answer the RSVP in your calendar. If none of these work for your team, you will be notified.<img src="./img/report2.png" class="report" style="height: 30px; width: 34px;"><span class="tooltip">You may use this function to report this message to your instructor.</span></div>
+                            <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px; background-color: black;"><img style="width: 242px" src="./img/fileLinked.png"></div>
                             <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px;">December 16, 8:00 AM - 9:00 AM<input type="checkbox" class="checkbox" checked></div>
                             <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px;">December 16, 9:00 AM - 10:00 AM<input type="checkbox" class="checkbox" checked></div>
                             <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px;">December 17, 11:00 AM - 12:00 PM<input type="checkbox" class="checkbox" checked>
