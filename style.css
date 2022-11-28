@@ -323,6 +323,19 @@ main {
 #leader:hover .tooltip {
     visibility: visible;
 }
+.theirChat.wade:hover .tooltip {
+    visibility: visible;
+    border: 2px solid red;
+    top: -200px;
+    width: 150px;
+    left: 140px;
+}
+.theirChat.wade img {
+    height: 25px;
+}
+.theirChat.wade {
+    position: relative;
+}
 
 #yourChatPic {
     height: 55px;
@@ -410,7 +423,9 @@ main:hover:not(#homeButtons) {
     display: flex;
     max-width: 250px;
     line-height: 1.5em;
-    font-size: 1.2em
+    font-size: 1.2em;
+    justify-content: space-between;
+    min-width: 242px;
 }
 
 .yourChatContainer {
@@ -444,10 +459,42 @@ main:hover:not(#homeButtons) {
 }
 
 .timestamp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: var(--color6);
     position: absolute;
+    height: 40px;
     right: 10px;
     justify-self: flex-end;
+    align-items: flex-end;
+}
+
+.timestamp:hover .tooltip {
+    visibility: visible;
+    border: 2px solid red;
+    top: -100px;
+}
+
+.theirChat.meeting {
+    font-size: 1em;
+}
+
+.theirChat.meeting:hover .tooltip {
+    visibility: visible;
+    border: 2px solid var(--color1);
+    left: 150px;
+    top: 10px;
+}
+
+.theirChatContainer.meeting {
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.timestamp img {
+    height: 20px;
+    width: 23px;
 }
 
 #chatScreen {

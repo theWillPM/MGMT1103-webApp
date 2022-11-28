@@ -6,6 +6,7 @@ let currentTab = document.getElementById("activeTab");
 let main = document.querySelector("main");
 let yourChatYou = document.querySelectorAll('.yourChatContainer.your, .timeSent.your, .yourChat.your');
 let yourChatWade = document.querySelectorAll('.yourChatContainer.wade, .timeSent.wade, .yourChat.wade');
+let botChat = document.querySelectorAll('.meeting');
 let allChat = document.querySelectorAll('yourChatContainer, .theirChatContainer, .yourChat, .theirChat, .timeSent');
 let chatBottom = document.querySelector('.chatBottom');
 let footerMenu = document.querySelector('#footer');
@@ -26,9 +27,34 @@ let profileIconBarContainer = document.getElementById("profileIconBarContainer")
 let profileContent = document.querySelectorAll('#email, #emailContainer, #profileIconBarContainer, #profileIconBar, .badges');
 let profName = document.querySelector('figcaption');
 let currentEmail = document.getElementById('email');
-console.log(yourChatYou);
+let rootElement = document.querySelector(':root');
+// console.log(yourChatYou);
 
 goHome();
+
+function getVariable() {
+    let rootStyle = getComputedStyle(rootElement);
+}
+
+function setLightMode() {
+    rootElement.style.setProperty('--color1', 'rgb(200,200,255)');
+    rootElement.style.setProperty('--color2', 'rgb(20,20,20)');
+    rootElement.style.setProperty('--color3', 'rgb(84 109 255)');
+    rootElement.style.setProperty('--color4', 'rgb(84 109 255)');
+    rootElement.style.setProperty('--color5', 'white');
+    rootElement.style.setProperty('--color6', '#888888');
+    rootElement.style.setProperty('--color7', 'black');
+}
+function setDarkMode() {
+    rootElement.style.setProperty('--color1', '#303030');
+    rootElement.style.setProperty('--color2', 'rgb(20,20,20)');
+    rootElement.style.setProperty('--color3', '#141414');
+    rootElement.style.setProperty('--color4', 'rgb(118, 48, 210)');
+    rootElement.style.setProperty('--color5', 'black');
+    rootElement.style.setProperty('--color6', '#888888');
+    rootElement.style.setProperty('--color7', 'white');
+}
+
 
 // banner.onclick = hideBanner;
 // yourProfile.onclick = goToYourProfile;
@@ -63,6 +89,8 @@ function goToYourChat() {
 }
 
 function goToChat() {
+    setDarkMode();
+    currentTab.style.fontSize="1.5em";
     navbar.removeAttribute('style');
     chatScreen.removeAttribute('style');
     teamsHomeElements.forEach(element => {
@@ -122,6 +150,9 @@ function goHome() {
     profileContent.forEach(element => {
         element.style.display = "none";
     });
+    botChat.forEach(element => {
+        element.style.display="none";
+    });
     chatBottom.style.display = "none";
     main.style.maxHeight = "540px";
     main.style.height = "540px";
@@ -148,6 +179,29 @@ function goToWadeChat() {
         element.style.display = "flex";
     });
     activeTab = "wade";
+}
+
+function goToMeetingChat() {
+    goToWadeChat();
+
+    currentTab.innerText = "[MGMT1103_2]G#12_Assignment1";
+    yourChatYou.forEach(element => {
+        element.style.display = "none";
+    });
+    currentProfPic.src="./img/meetingIcon.png";
+    theirChatWade.forEach(element => {
+        element.style.display = "none";
+    });
+    currentTab.className = "";
+    yourChatWade.forEach(element => {
+        element.style.display = "none";
+    });
+    botChat.forEach(element => {
+        element.style.display="flex";
+    });
+    currentTab.style.fontSize="1em";
+    activeTab = "meeting";
+
 }
 
 function openWadeProfile() {

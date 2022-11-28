@@ -68,13 +68,13 @@
                     <div class="chatLine" id="wadeChat" onclick="timeout(goToWadeChat, 200)">
                         <div class="profilePicContainer"><img class="profilePic" src="./img/wade.png" alt="profilePic"><img class="chatStatusIcon" src="./img/available.png"></div>
                         <div class="nameAndLastMessage"><p>Wade Wilson</p><p>Have you seen my new hands?</p> </div>
-                        <div class="timestamp">17:29</div>
+                        <div class="timestamp"><img src="./img/report.png" class="report"><span class="tooltip">This icon shows the user sent this message with an urgency status.</span>Wednesday</div>
                     </div>
-                    <div class="chatLine" id="mettingChat">
+                    <div class="chatLine" id="mettingChat" onclick="timeout(goToMeetingChat, 200)">
                         <div class="profilePicContainer"><img class="profilePic"  src="./img/meetingIcon.png" alt="profilePic"></div>
                         <div class="nameAndLastMessage"><p>[MGMT1103_2]G#12_Assignment1</p>
                             <p>Bot: Welcome to your new group.</p> </div>
-                        <div class="timestamp">212 B.C.</div>
+                        <div class="timestamp">Today 08:15</div>
                     </div>
                     <div class="chatLine">
                         <div class="profilePicContainer"><img class="profilePic"  src="./img/profilePic2.png" alt="profilePic"><img class="chatStatusIcon" src="./img/absent.png"></div>
@@ -94,7 +94,7 @@
                     <div class="chatLine">
                         <div class="profilePicContainer"><img class="profilePic"  src="./img/profilePic2.png" alt="profilePic"><img class="chatStatusIcon" id="offline" src="./img/offline.png"></div>
                         <div class="nameAndLastMessage"><p>Student D</p><p>Hello</p> </div>
-                        <div class="timestamp">XIX Century</div>
+                        <div class="timestamp">Last Month</div>
                     </div>
 
                     <!-- This div holds all chat screens -->
@@ -108,13 +108,33 @@
                         <!-- wade chat -->
                         <div class ="theirChatContainer wade">
                             <p class="timeSent wade">Wednesday 11:59 PM</p>
-                            <div class="theirChat wade">Have you seen my new hands? They look awesome!</div>
+                            <div class="theirChat wade">Have you seen my new hands? They look awesome!<img src="./img/report.png" class="report"><span class="tooltip">This icon shows the user sent this message with an urgency status. This icon may also be clicked to report this message.</span></div>
+                        
+                            
                         </div>
                         <div class="yourChatContainer wade">
                             <div class="yourChat wade">Are those...baby hands?</div>
                         </div>
+
+                        <div class="theirChat wade">Chimichanga!<img src="./img/report.png" class="report"><span class="tooltip">This icon shows the user sent this message with an urgency status. This icon may also be clicked to report this message.</span></div>
                         <div id="profileIconBarContainer">BVC POINTS: 42<img id="profileIconBar" src="./img/profileIcons.png"></div>
                         <div id="emailContainer">Email<p id="email">s.tudent123@mybvc.ca</p></div>
+
+                        <!-- Meeting Bot Chat -->
+                        <div class ="theirChatContainer meeting">
+                            <p class="timeSent meeting" style="transform: translateY(20px); margin-right: 130px;">Today 08:15 AM</p>
+                            <div class="theirChat meeting">Bot: Welcome to your new group. This is an automated message. This chat was automatically created with your group members and is under your instructor's supervision. <br>The auto-scheduler has identified these 3 time slots would work great for your next team meeting. Please answer the RSVP in your calendar. If none of these work for your team, you will be notified.<img src="./img/report2.png" class="report" style="height: 30px; width: 34px;"><span class="tooltip">You may use this function to report this message to your instructor.</span></div>
+                            <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px;">December 16, 8:00 AM - 9:00 AM<input type="checkbox"></div>
+                            <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px;">December 16, 9:00 AM - 10:00 AM<input type="checkbox"></div>
+                            <div class="theirChatContainer meeting" style="margin-right: 50px; flex-direction: row; gap: 20px;">December 17, 11:00 AM - 12:00 PM<input type="checkbox">
+                            </div>
+                            
+                        
+                        <div class="yourChatContainer meeting">
+                            <div class="yourChat meeting">Hello, group! Looking forward to working with you.</div>
+                        </div>
+                        <!-- Meeting end -->
+
                     </div>
 
                 </main>
