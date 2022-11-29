@@ -35,6 +35,9 @@ let chatTopSpan = document.querySelectorAll('chatTop,span');
 let toolTips = document.querySelectorAll('.tooltip');
 // console.log(yourChatYou);
 
+/* I AM LEARNING
+THE CODE IS A MESS, SORRY! */
+
 goHome();
 
 function getVariable() {
@@ -58,6 +61,7 @@ function setLightMode() {
     element.style.backgroundColor = "var(--color7)";
 });
 profileIconBarContainer.style.backgroundColor="var(--color4)"
+current="light";
 }
 function setDarkMode() {
     rootElement.style.setProperty('--color1', '#303030');
@@ -76,6 +80,7 @@ function setDarkMode() {
     element.style.backgroundColor = "var(--color7)";
 });
 profileIconBarContainer.style.backgroundColor="var(--color5)"
+current="dark";
 }
 
 

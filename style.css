@@ -14,7 +14,7 @@
     color: var(--color7);
     font-family: sans-serif;
     font-size: 12px;
-    transition: 1s;
+    transition: 1s ease-out;
 }
 #start {
     border: 5px solid var(--color5);
