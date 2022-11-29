@@ -695,6 +695,7 @@ main:hover:not(#homeButtons) {
     justify-content: center;
     align-items: center;
     height: 28px;
+    background-color: black;
 }
 
 .androidBottom :hover {
