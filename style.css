@@ -724,11 +724,12 @@ main:hover:not(#homeButtons) {
     gap: 7px;
     margin-right: 10px;
     width: 100%;
+    transition: none;
 }
 #back span{
+    transition: none;
     width: 13px;
     height: 1px;
-    background-color: var(--color7);
 }
 
 #back :first-child {
