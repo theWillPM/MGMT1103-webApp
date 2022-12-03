@@ -13,15 +13,48 @@
         <br><br>Amanda do N. Andrade
         <br>Kirtan Patel
         <br>Willian P. Munhoz
-        <br>Daniel Olugboye
+        <br><s>Daniel Olugboye</s>
         <br><br>Instructor: Mr. Graham Mosimann
         <br>MGMT1103_2 Fall/2022</p>
 
-        <img src="./img/BowLogo.png"></div>
+        <img src="./img/BowLogo.png">Click to close</div>
    
+ 
+
+
+        
+
     <!-- The whole point is making a mock-up cellphone
     So all of the content should be inside a cellphone image -->
     <div class="cellphone">
+    <!-- 
+        Adding some buttons to the sides of the cellphone
+        to navigate through screens and follow the presentation state
+     -->
+        <div class="slideButtons">
+        <div id="leftButtons">
+            <div id="slideMenu" style="color: white;">Slide</div>
+            <div id="slide1" onclick="timeout(goHome(), 120)">1</div>
+            <div id="slide2" onclick="timeout(goToChat(), 120)">2</div>
+            <div id="slide3" onclick="timeout(goToMeetingChat(), 120)">3</div>
+            <div id="slide4" onclick="timeout(goToChat(), 120)">4</div>
+            <div id="slide5" onclick="timeout(goToWadeChat(), 120)">5</div>
+            <div id="slide6" onclick="timeout(openWadeProfile(), 120)">6</div>
+            <div id="slide6" onclick="timeout(switchWadeProfile(), 120)">7</div>
+            <div class="themes" id="lightTheme" style="color: white;" onclick="timeout(setLightMode(), 120)">Light Theme</div>
+            <div class="themes" id="darkTheme" style="color: white;" onclick="timeout(setDarkMode(), 120)">Dark  Theme</div>
+        </div>
+        <div id="behindCellPhone">
+
+        </div>
+        <div id="rightButtons">
+
+        </div>
+
+
+        </div>
+
+        <!-- Cellphone screen contents -->
         <div class="screen">
             <div class="androidTop">
                 <img src="./img/androidTop.png">
@@ -117,7 +150,7 @@
                         </div>
 
                         <div class="theirChat wade">Chimichanga!<img src="./img/report.png" class="report"><span class="tooltip">This icon shows the user sent this message with an urgency status. This icon may also be clicked to report this message.</span></div>
-                        <div id="profileIconBarContainer">BVC POINTS: 42<img id="profileIconBar" src="./img/profileIcons.png"></div>
+                        <div id="profileIconBarContainer"><p id="bvcPoints">BVC POINTS: 42</p><img id="profileIconBar" src="./img/profileIcons.png"></div>
                         <div class="emailContainer">Email<p id="email">s.tudent123@mybvc.ca</p></div>
                         <div class="emailContainer" id="peer">PEER REVIEWS:</div>
                         <div class="emailContainer"id="review1"><div>MGMT1103_2_Assignment1</div><div><input type="radio" name="grade1">1<input type="radio" name="grade1">2<input type="radio" name="grade1">3<input type="radio" name="grade1">4<input type="radio" name="grade1" checked>5</div></div>
@@ -159,7 +192,7 @@
                         <div><input id="chatInput" placeholder="Type a message here"/></div>
                         <div id="cameraAndMic"><img src="./img/camera.png"><img src="./img/microphone.png"></div>
                     </div>
-                    <div  class="androidBottom">
+                    <div  class="androidBottom" id="androidBottom">
                         <div class="bottomScreen"><div id="apps"><span></span><span></span><span></span></div></div>
                         <div class="bottomScreen" onclick="timeout(goHome, 200)"><div id="home"></div></div>
                         <div class="bottomScreen" onclick="timeout(backClick, 200)"><div id="back"><span></span><span></span></div></div>

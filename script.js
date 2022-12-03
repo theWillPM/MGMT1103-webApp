@@ -10,6 +10,7 @@ let botChat = document.querySelectorAll('.meeting');
 let allChat = document.querySelectorAll('yourChatContainer, .theirChatContainer, .yourChat, .theirChat, .timeSent');
 let chatBottom = document.querySelector('.chatBottom');
 let footerMenu = document.querySelector('#footer');
+let footerButton = document.querySelectorAll('.footerButton');
 let activeTab = "home";
 let backButton = document.getElementById("back");
 let navbar = document.getElementById("navbar");
@@ -30,9 +31,14 @@ let reviews = document.querySelectorAll('#review1, #review2, #peer');
 let profName = document.querySelector('figcaption');
 let currentEmail = document.getElementById('email');
 let rootElement = document.querySelector(':root');
-let current = "dark";
+let bvcPoints = document.getElementById("bvcPoints");
+let current = "old";
+let currentTheme = "dark"
 let chatTopSpan = document.querySelectorAll('chatTop,span');
 let toolTips = document.querySelectorAll('.tooltip');
+let androidBottom = document.getElementById("androidBottom");
+let currentSlide = 1;
+let BVCpoints = document.querySelector('strong');
 // console.log(yourChatYou);
 
 /* I AM LEARNING
@@ -46,22 +52,28 @@ function getVariable() {
 
 function setLightMode() {
     rootElement.style.setProperty('--color1', 'rgb(200,200,255)');
-    rootElement.style.setProperty('--color2', 'rgb(20,20,20)');
+    rootElement.style.setProperty('--color2', 'white');
     rootElement.style.setProperty('--color3', 'rgb(84 109 255)');
     rootElement.style.setProperty('--color4', 'rgb(84 109 255)');
     rootElement.style.setProperty('--color5', 'white');
     rootElement.style.setProperty('--color6', '#888888');
     rootElement.style.setProperty('--color7', 'black');
+    currentTab.style.color = "var(--color5)";
     badges.style.backgroundColor = "var(--color5)";
     chatTopSpan.forEach(element => {
-        element.style.color="var(--color7)";
+        element.style.color="var(--color5)";
+   });
+    footerButton.forEach(element => {
+        element.style.color="var(--color5)";
    });
    toolTips.forEach(element => {
     element.style.color = "var(--color5)";
     element.style.backgroundColor = "var(--color7)";
 });
-profileIconBarContainer.style.backgroundColor="var(--color4)"
-current="light";
+profileIconBarContainer.style.backgroundColor="var(--color4)";
+bvcPoints.style.color="white";
+androidBottom.style.backgroundColor ="var(--color7)";
+currentTheme="light";
 }
 function setDarkMode() {
     rootElement.style.setProperty('--color1', '#303030');
@@ -71,16 +83,22 @@ function setDarkMode() {
     rootElement.style.setProperty('--color5', 'black');
     rootElement.style.setProperty('--color6', '#888888');
     rootElement.style.setProperty('--color7', 'white');
-    badges.style.backgroundColor = "var(--color7)";
-    chatTopSpan.forEach(element => {
-        element.style.color="var(--color6)";
+    currentTab.style.color="var(--color7)";
+    footerButton.forEach(element => {
+        element.style.color="var(--color5)";
+   });
+   badges.style.backgroundColor = "var(--color7)";
+   chatTopSpan.forEach(element => {
+       element.style.color="var(--color6)";
    }); 
    toolTips.forEach(element => {
     element.style.color = "var(--color5)";
     element.style.backgroundColor = "var(--color7)";
 });
-profileIconBarContainer.style.backgroundColor="var(--color5)"
-current="dark";
+profileIconBarContainer.style.backgroundColor="var(--color5)";
+bvcPoints.style.color="black";
+androidBottom.style.backgroundColor ="var(--color5)";
+currentTheme="dark";
 }
 
 
@@ -92,6 +110,7 @@ function hideBanner() {
 }
 
 function goToYourChat() {
+    goToChat();
     if (activeTab!="yourProfile") 
     {
         teamsHomeElements.forEach(element => {
@@ -117,7 +136,7 @@ function goToYourChat() {
 }
 
 function goToChat() {
-    setDarkMode();
+    // setDarkMode();
     currentTab.style.fontSize="1.5em";
     navbar.removeAttribute('style');
     chatScreen.removeAttribute('style');
@@ -148,6 +167,8 @@ function goToChat() {
 }
 
 function openYourProfile() {
+    goToChat();
+    goToYourChat();
     yourProfile.onclick="timeout(openYourProfile(), 200)";
     chatTop.style.display = "none";
     yourProfile.style.display = "flex";
@@ -201,6 +222,7 @@ function goHome() {
 }
 
 function goToWadeChat() {
+    goToChat();
     goToYourChat();
     
     currentTab.innerText = "Wade Wilson";
@@ -219,6 +241,7 @@ function goToWadeChat() {
 }
 
 function goToMeetingChat() {
+    goToChat();
     goToWadeChat();
     
     currentTab.innerText = "[MGMT1103_2]G#12_Assignment1";
@@ -242,6 +265,8 @@ function goToMeetingChat() {
 }
 
 function openWadeProfile() {
+    goToChat();
+    goToWadeChat();
     openYourProfile();
     yourProfPic.src="./img/wade.png";
     profName.textContent="Wade Wilson";
@@ -257,25 +282,21 @@ function openWadeProfile() {
 }
 
 function switchProfile() {
-    if (current == "dark") {
-    setLightMode();
-    profileIconBarContainer.innerHTML='<strong>BVC Points: 42</strong><img id="profileIconBar" src="./img/profileIcons.png">';
+
+    if (current == "old") {
+    profileIconBarContainer.innerHTML='<strong style="color: white;">BVC Points: 42</strong><img id="profileIconBar" src="./img/profileIcons.png">';
     badges.style.display="flex";
     reviews.forEach(element => {
         element.style.display="flex";
     });
-    
-    current = "light";
-
-
-    } else if (current == "light") {
-    setDarkMode();
+    current = "new";
+    } else if (current == "new") {
     reviews.forEach(element => {
         element.style.display="none";
     });
     profileIconBarContainer.innerHTML='<img id="profileIconBar" src="./img/profileIcons.png">';
     badges.style.display="none";
-    current = "dark";
+    current = "old";
     }
 }
 
@@ -306,6 +327,15 @@ function openProfile() {
     if (activeTab == "wade") {
         openWadeProfile();
     }
+}
+
+function switchWadeProfile() {
+    goToChat();
+    goToWadeChat();
+    openWadeProfile();
+    current = "old";
+    setTimeout(switchProfile, 1000);
+    setTimeout(setLightMode, 1000);
 }
 
 function teamsClick() {
