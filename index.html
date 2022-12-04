@@ -34,22 +34,22 @@
         <div class="slideButtons">
         <div id="leftButtons">
             <div id="slideMenu" style="color: white;">Slide</div>
-            <div id="slide1" onclick="timeout(goHome(), 120)">1</div>
-            <div id="slide2" onclick="timeout(goToChat(), 120)">2</div>
-            <div id="slide3" onclick="timeout(goToMeetingChat(), 120)">3</div>
-            <div id="slide4" onclick="timeout(goToChat(), 120)">4</div>
-            <div id="slide5" onclick="timeout(goToWadeChat(), 120)">5</div>
-            <div id="slide6" onclick="timeout(openWadeProfile(), 120)">6</div>
-            <div id="slide6" onclick="timeout(switchWadeProfile(), 120)">7</div>
+            <div id="slide1" onclick="timeout(function() {focusSlide(1); goHome()}, 120)">1</div>
+            <div id="slide2" onclick="timeout(function() {focusSlide(2); goToChat()}, 120)">2</div>
+            <div id="slide3" onclick="timeout(function() {focusSlide(3); goToMeetingChat()}, 120)">3</div>
+            <div id="slide4" onclick="timeout(function() {goToChat(); focusSlide(4)}, 120)">4</div>
+            <div id="slide5" onclick="timeout(function() {focusSlide(5); goToWadeChat()}, 120)">5</div>
+            <div id="slide6" onclick="timeout(function() {focusSlide(6); openWadeProfile()}, 120)">6</div>
+            <div id="slide7" onclick="timeout(function() {focusSlide(7); switchWadeProfile()}, 120)">7</div>
             <div class="themes" id="lightTheme" style="color: white;" onclick="timeout(setLightMode(), 120)">Light Theme</div>
             <div class="themes" id="darkTheme" style="color: white;" onclick="timeout(setDarkMode(), 120)">Dark  Theme</div>
         </div>
-        <div id="behindCellPhone">
+<!--         <div id="behindCellPhone">
 
         </div>
         <div id="rightButtons">
 
-        </div>
+        </div> -->
 
 
         </div>

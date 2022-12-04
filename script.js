@@ -39,12 +39,23 @@ let toolTips = document.querySelectorAll('.tooltip');
 let androidBottom = document.getElementById("androidBottom");
 let currentSlide = 1;
 let BVCpoints = document.querySelector('strong');
+let slide1 = document.getElementById("slide1");
+let slide2 = document.getElementById("slide2");
+let slide3 = document.getElementById("slide3");
+let slide4 = document.getElementById("slide4");
+let slide5 = document.getElementById("slide5");
+let slide6 = document.getElementById("slide6");
+let slide7 = document.getElementById("slide7");
+let slideButtons = document.querySelectorAll('[id^="slide"]');
+let darkButton = document.getElementById("darkTheme");
+let lightButton = document.getElementById("lightTheme");
 // console.log(yourChatYou);
 
 /* I AM LEARNING
 THE CODE IS A MESS, SORRY! */
 
 goHome();
+setDarkMode();
 
 function getVariable() {
     let rootStyle = getComputedStyle(rootElement);
@@ -73,6 +84,8 @@ function setLightMode() {
 profileIconBarContainer.style.backgroundColor="var(--color4)";
 bvcPoints.style.color="white";
 androidBottom.style.backgroundColor ="var(--color7)";
+lightButton.style.backgroundColor="var(--color4)";
+darkButton.style.backgroundColor="black";
 currentTheme="light";
 }
 function setDarkMode() {
@@ -98,6 +111,8 @@ function setDarkMode() {
 profileIconBarContainer.style.backgroundColor="var(--color5)";
 bvcPoints.style.color="black";
 androidBottom.style.backgroundColor ="var(--color5)";
+lightButton.style.backgroundColor="black";
+darkButton.style.backgroundColor="var(--color4)";
 currentTheme="dark";
 }
 
@@ -110,6 +125,7 @@ function hideBanner() {
 }
 
 function goToYourChat() {
+    focusSlide();
     goToChat();
     if (activeTab!="yourProfile") 
     {
@@ -137,6 +153,7 @@ function goToYourChat() {
 
 function goToChat() {
     // setDarkMode();
+
     currentTab.style.fontSize="1.5em";
     navbar.removeAttribute('style');
     chatScreen.removeAttribute('style');
@@ -164,6 +181,7 @@ function goToChat() {
     profileIconBarContainer.style.display="none";
     yourProfile.onclick = function() {timeout(goToYourChat, 200)};
     resetUser();
+    focusSlide(2);
 }
 
 function openYourProfile() {
@@ -194,6 +212,7 @@ function openYourProfile() {
 }
 
 function goHome() {
+
     profileIconBarContainer.style.display="none";
     teamsHomeElements.forEach(element => {
         element.style.display = "none";
@@ -219,12 +238,13 @@ function goHome() {
     chatScreen.style.display= "none";
     homeButton.style.display= "flex";
     activeTab = "home";
+    focusSlide(1);
 }
 
 function goToWadeChat() {
     goToChat();
     goToYourChat();
-    
+
     currentTab.innerText = "Wade Wilson";
     yourChatYou.forEach(element => {
         element.style.display = "none";
@@ -238,12 +258,13 @@ function goToWadeChat() {
         element.style.display = "flex";
     });
     activeTab = "wade";
+    focusSlide(5);
 }
 
 function goToMeetingChat() {
     goToChat();
     goToWadeChat();
-    
+
     currentTab.innerText = "[MGMT1103_2]G#12_Assignment1";
     yourChatYou.forEach(element => {
         element.style.display = "none";
@@ -261,13 +282,15 @@ function goToMeetingChat() {
     });
     currentTab.style.fontSize="1em";
     activeTab = "meeting";
-    
+    focusSlide(3);
 }
 
 function openWadeProfile() {
     goToChat();
     goToWadeChat();
     openYourProfile();
+    currentTab.innerText = "Wade Wilson";
+    currentProfPic.src="./img/wade.png";
     yourProfPic.src="./img/wade.png";
     profName.textContent="Wade Wilson";
     yourProfile.removeAttribute('onclick');
@@ -279,9 +302,11 @@ function openWadeProfile() {
     profileIconBarContainer.innerHTML='<img id="profileIconBar" src="./img/profileIcons.png">';
 
     activeTab = "wadeProfile";
+    focusSlide(6);
 }
 
 function switchProfile() {
+
 
     if (current == "old") {
     profileIconBarContainer.innerHTML='<strong style="color: white;">BVC Points: 42</strong><img id="profileIconBar" src="./img/profileIcons.png">';
@@ -298,6 +323,7 @@ function switchProfile() {
     badges.style.display="none";
     current = "old";
     }
+    focusSlide(7);
 }
 
 function backClick() {
@@ -333,9 +359,10 @@ function switchWadeProfile() {
     goToChat();
     goToWadeChat();
     openWadeProfile();
+    switchProfile();
+    setLightMode();
     current = "old";
-    setTimeout(switchProfile, 1000);
-    setTimeout(setLightMode, 1000);
+ focusSlide(7);   
 }
 
 function teamsClick() {
@@ -354,4 +381,36 @@ function resetUser() {
     yourProfPic.src="./img/profilePic2.png";
     profName.textContent="Student (You)";
     currentEmail.textContent="s.tudent123@mybvc.ca";
+}
+
+function focusSlide(slide) {
+    slide1.style.backgroundColor="black";
+    slide2.style.backgroundColor="black";
+    slide3.style.backgroundColor="black";
+    slide4.style.backgroundColor="black";
+    slide5.style.backgroundColor="black";
+    slide6.style.backgroundColor="black";
+    slide7.style.backgroundColor="black";
+    switch (slide) {
+        case 1: {
+            slide1.style.backgroundColor="var(--color4)";
+            break;}
+        case 2: {
+            slide2.style.backgroundColor="var(--color4)";
+            break;}
+        case 3:{
+            slide3.style.backgroundColor="var(--color4)";
+            break;}
+        case 4:{
+            slide4.style.backgroundColor="var(--color4)";
+            break;}
+        case 5:{
+            slide5.style.backgroundColor="var(--color4)";
+            break;}
+        case 6:{
+            slide6.style.backgroundColor="var(--color4)";
+            break;}
+        case 7:
+            slide7.style.backgroundColor="var(--color4)";
+    }
 }
